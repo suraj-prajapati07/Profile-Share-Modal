@@ -1,0 +1,267 @@
+:root{
+    --white : #fff;
+    --black : #000;
+    --cardBorder : #ffffff30;
+    --cardBackground : #ffffff1a;
+    --btnBg : #ffffff00;
+    --btnFocus : #ffffffb9;
+
+    --facebook : #1771e6;
+    --twitter : #1c99e6;
+    --instagram : #cb2770;
+    --whatsapp : #2fe664;
+    --telegram : #0081c2;
+    --github : rgb(88, 101, 242);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--black);
+}
+
+.circle-top{
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    position: fixed;
+    top: 5%;
+    left: 30%;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    box-shadow: 0px 0px 50px #d84869;
+    animation: circleTop 15s ease infinite;
+}
+.circle-bottom{
+    width: 19em;
+    height: 19em;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 30%;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    box-shadow: 0 0 50px #5648d8;
+    animation: circleBottom 8s ease infinite;
+}
+@keyframes circleTop{
+    50%{
+        left: 33%;
+        top: 4%;
+        scale: 1.11;
+    }
+}
+
+@keyframes circleBottom{
+    50% {
+        bottom: 8%;
+        right: 31%;
+    }
+}
+
+.card{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--white);
+    background: var(--cardBackground);
+    border: 0.1rem solid var(--cardBorder);
+    border-radius: 1.5rem;
+    padding: 2rem 3rem;
+    backdrop-filter: blur(1.3rem);
+    position: relative;
+    z-index: 10;  
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--cardBorder);
+    object-fit: cover;
+    object-position: left;
+}
+.card h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.card h3{
+    text-align: center;
+    color: #ffffff85;
+}
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.share-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    background: #ffffff00;
+    border: 2px solid #ffffffb9;
+    text-transform: capitalize;
+    border-radius: 4px;
+    color: #ffffffb9;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.follow-btn{
+    text-transform: capitalize;
+    width: 150px;
+    padding: 9px 12px;
+    background: #ffffff00;
+    border: 2px solid #ffffffb9;
+    border-radius: 4px;
+    color: #ffffffb9;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn-group button:hover{
+    background: var(--btnFocus);
+    color: #131313;
+}
+
+/*................... Profile modal ........... */
+.modal-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 2px solid #ffffff59;
+    width: 500px;
+    background: #00000088;
+    scale: 0;
+    
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 100;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+  }
+  .modal-header {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ffffff88;
+  }
+  .modal-header button i {
+    display: inline;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+  .cross-icon-btn{
+    /* pointer-events: none; */
+  }
+  .media-icons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+.icon {
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ffffff88;
+    margin: 10px 0px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 50%;
+    transition: all 0.5s;
+
+}
+.icon i {
+    font-size: 27px;
+}
+  
+#facebook {
+    color: var(--facebook);
+    border: 1px solid var(--facebook);
+}
+
+#facebook:hover {
+    color: var(--white);
+    background: var(--facebook);
+}
+
+#twitter{
+    color: var(--twitter);
+    border: 1px solid var(--twitter);
+}
+
+#twitter:hover{
+    color: var(--white);
+    background: var(--twitter);
+}
+
+#instagram {
+    color: var(--instagram);
+    border: 1px solid var(--instagram);
+}
+
+#instagram:hover{
+    color: var(--white);
+    background: var(--instagram);
+}
+
+#whatsapp{
+    color: var(--whatsapp);
+    border: 1px solid var(--whatsapp);
+}
+
+#whatsapp:hover{
+    color: var(--white);
+    background: var(--whatsapp);
+}
+
+#telegram{
+    color: var(--telegram);
+    border: 1px solid var(--telegram);
+}
+
+#telegram:hover{
+    color: var(--white);
+    background: var(--telegram);
+}
+.activate-modal{
+    scale: 1;
+}
+/* ......................Overlay....................... */
+.overlay{
+    position: fixed;
+    background-color: #41557883;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;/*set whether or not an element should react to pointer events*/
+    transition: 0.5s ease-in-out;
+}
+.activate-overlay{
+    opacity: 1;
+    pointer-events: initial;
+}
